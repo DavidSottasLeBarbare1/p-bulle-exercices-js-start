@@ -27,7 +27,8 @@
  * @returns {string}
  */
 export function frontDoorResponse(line) {
-  throw new Error('Remove this line and implement the function');
+  //Returns the first letter of the line
+  return line[0]
 }
 
 /**
@@ -38,7 +39,8 @@ export function frontDoorResponse(line) {
  * @returns {string} the front door password
  */
 export function frontDoorPassword(word) {
-  throw new Error('Remove this line and implement the function');
+  //Change the first letter of the word to an uppercase letter and then adding the rest of the word lowercased at the end
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
 
 /**
@@ -49,7 +51,8 @@ export function frontDoorPassword(word) {
  * @returns {string}
  */
 export function backDoorResponse(line) {
-  throw new Error('Remove this line and implement the function');
+  //Trimming the line to remove unwanted whitespaces at the end then returning the last letter of the line
+  return line.trim()[line.trim().length - 1];
 }
 
 /**
@@ -60,5 +63,6 @@ export function backDoorResponse(line) {
  * @returns {string} the back door password
  */
 export function backDoorPassword(word) {
-  throw new Error('Remove this line and implement the function');
+  //Returning the well formatted word with a ", please" string at the end
+  return frontDoorPassword(word) + ", please"
 }
