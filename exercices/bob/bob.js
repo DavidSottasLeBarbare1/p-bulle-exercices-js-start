@@ -4,17 +4,23 @@
 //
 
 export const hey = (message) => {
+
+  //Check if the message ends with a ? even when there are spaces after it
   if (message.trim().endsWith("?"))
   {
+    //Check if the message is fully uppercase
+    if (!/[a-z]/.test(message) && /[A-Z]/.test(message))
+  {
+    return "Calm down, I know what I'm doing!";
+  }
     return "Sure.";
   }
-  if (/[a-zA-Z]/.test(message))
-  {
-    if (message === message.toUpperCase() && message.trim().endsWith("?"))
-    {
-        return "Calm down, I know what I'm doing!";
-    }
-    if (message === message.toUpperCase())
+
+  //Check if the message has at least one character (number or letter)
+  if (/[a-zA-Z\d]/.test(message))
+  { 
+    //Check if the message is fully uppercase
+    if (!/[a-z]/.test(message) && /[A-Z]/.test(message))
     {
       return "Whoa, chill out!";
     }
