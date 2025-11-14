@@ -1,5 +1,6 @@
 // @ts-check
 
+
 /**
  * Determine how many cards of a certain type there are in the deck
  *
@@ -10,7 +11,15 @@
  */
 export function cardTypeCheck(stack, card) {
   // 🚨 Use .forEach
-  throw new Error('Implement the cardTypeCheck function');
+  //Number to increment
+  let numberOfCard = 0;
+
+  //Returning the number of card in the stack that are the same value as card
+  stack.forEach(c => {
+    if (c == card)
+      numberOfCard ++;
+  });
+  return numberOfCard ;
 }
 
 /**
@@ -22,5 +31,15 @@ export function cardTypeCheck(stack, card) {
  */
 export function determineOddEvenCards(stack, type) {
   // 🚨 Use a `for...of` loop
-  throw new Error('Implement the determineOddEvenCards function');
+  //Number to increment
+  let numberOfCard = 0;
+
+  //Returning the number of each odd or each even card based on type
+  stack.forEach(c => {
+    if (c % 2 == 0 && type)
+        numberOfCard++;
+    else if (c % 2 != 0 && !type)
+        numberOfCard++;
+  });
+  return numberOfCard;
 }
