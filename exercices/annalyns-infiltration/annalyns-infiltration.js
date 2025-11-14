@@ -27,7 +27,8 @@
  * @return {boolean} Whether or not you can execute a fast attack.
  */
 export function canExecuteFastAttack(knightIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  //Inverse the knightIsAwake boolean
+  return !knightIsAwake;
 }
 
 /**
@@ -40,7 +41,8 @@ export function canExecuteFastAttack(knightIsAwake) {
  * @returns {boolean} Whether or not you can spy on someone.
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  //Check if anyone is awake
+  return knightIsAwake || archerIsAwake || prisonerIsAwake;
 }
 
 /**
@@ -52,7 +54,8 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  * @returns {boolean} Whether or not you can send a signal to the prisoner.
  */
 export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  //Check if the prisoner is awake and if the archer is not awake 
+  return prisonerIsAwake && !archerIsAwake;
 }
 
 /**
@@ -71,5 +74,6 @@ export function canFreePrisoner(
   prisonerIsAwake,
   petDogIsPresent,
 ) {
-  throw new Error('Remove this line and implement the function');
+  //Check if the pet dog is present, if so check if the archer is sleeping. If the dog is not present, checks if the prisoner is awake and if both the knight and the archer are sleeping
+  return ((petDogIsPresent && !archerIsAwake) || (!petDogIsPresent && prisonerIsAwake && !archerIsAwake && !knightIsAwake))
 }
