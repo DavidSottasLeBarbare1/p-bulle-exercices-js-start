@@ -25,10 +25,12 @@ export function needsLicense(kind) {
  */
 export function chooseVehicle(option1, option2) {
   //Returning the option that comes first in dictionary order
-  if (option1 <= option2)
+  if (option1 <= option2){
     return option1 + " is clearly the better choice."
-  else
+  }
+  else {
     return option2 + " is clearly the better choice."
+  }
 }
 
 /**
@@ -41,11 +43,13 @@ export function chooseVehicle(option1, option2) {
  */
 export function calculateResellPrice(originalPrice, age) {
   //Returning the price based on the age of the vehicle
-  if (age < 3 )
-    return originalPrice * 0.8
-  else if (age > 10)
-    return originalPrice * 0.5
-  else 
-    return originalPrice * 0.7
-    
+  if (age < 3 ) { 
+    return originalPrice * 0.8 
+  }
+  else if (age > 10) { 
+    return originalPrice * 0.5 
+  }
+  else { 
+    return originalPrice * 0.7 
+  }
 }
