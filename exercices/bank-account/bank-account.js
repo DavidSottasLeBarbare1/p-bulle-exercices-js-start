@@ -4,33 +4,67 @@
 //
 
 export class BankAccount {
+  //Attributes
+  accountBalance; //Account balance
+  isClosed; //Is the account closed
+
+  //Default constructor
   constructor() {
-    throw new Error('Remove this line and implement the function');
+    isClosed = true;
+    accountBalance = 0;
   }
 
+  //Method to open the account if it's not already opened
   open() {
-    throw new Error('Remove this line and implement the function');
+    if (isClosed) {
+      accountBalance = 0;
+      isClosed = false;
+    } else {
+      throw new ValueError();
+    }
   }
 
+  //Method to close the account if it's not already closed
   close() {
-    throw new Error('Remove this line and implement the function');
+    if (!isClosed) {
+      isClosed = true;
+    } else {
+      throw new ValueError();
+    }
   }
 
-  deposit() {
-    throw new Error('Remove this line and implement the function');
+  //Method to deposit money to the account
+  deposit(amountToAdd) {
+    if (!isClosed && Math.sign(amountToAdd) != -1) {
+      accountBalance += amountToAdd;
+    } else {
+      throw new ValueError();
+    }
   }
 
-  withdraw() {
-    throw new Error('Remove this line and implement the function');
+  //Method to withdraw money from the account
+  withdraw(amountToWithdraw) {
+    if (
+      !isClosed &&
+      accountBalance >= amountToWithdraw &&
+      Math.sign(amountToWithdraw) != -1
+    ) {
+      accountBalance -= amountToWithdraw;
+    } else {
+      throw new ValueError();
+    }
   }
 
+  //Getter of balance
   get balance() {
-    throw new Error('Remove this line and implement the function');
+    if (isClosed) throw new ValueError();
+    else return accountBalance;
   }
 }
 
+//Custom error message
 export class ValueError extends Error {
   constructor() {
-    super('Bank account error');
+    super("Bank account error");
   }
 }
