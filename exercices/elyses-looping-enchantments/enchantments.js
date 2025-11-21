@@ -16,8 +16,9 @@ export function cardTypeCheck(stack, card) {
 
   //Returning the number of card in the stack that are the same value as card
   stack.forEach(c => {
-    if (c == card)
+    if (c == card){
       numberOfCard ++;
+    }
   });
   return numberOfCard ;
 }
@@ -36,10 +37,12 @@ export function determineOddEvenCards(stack, type) {
 
   //Returning the number of each odd or each even card based on type
   stack.forEach(c => {
-    if (c % 2 == 0 && type)
+    if (c % 2 == 0 && type){
         numberOfCard++;
-    else if (c % 2 != 0 && !type)
+    }
+    else if (c % 2 != 0 && !type){
         numberOfCard++;
+    }
   });
   return numberOfCard;
 }
