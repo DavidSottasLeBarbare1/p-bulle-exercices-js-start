@@ -10,8 +10,9 @@
  * @param {...number} ids
  * @returns {number[]} wagon ids
  */
-export function getListOfWagons(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
-  throw new Error('Remove this line and implement the function');
+export function getListOfWagons(...ids) {
+  //Returns the ids parameter
+  return ids;
 }
 
 /**
@@ -21,7 +22,9 @@ export function getListOfWagons(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
  * @returns {number[]} reordered list of wagons
  */
 export function fixListOfWagons(ids) {
-  throw new Error('Remove this line and implement the function');
+  //Switching the order of the first 2 wagons
+  const [a, b, ...everythingElse] = ids;
+  return [...everythingElse, a, b];
 }
 
 /**
@@ -32,7 +35,10 @@ export function fixListOfWagons(ids) {
  * @returns {number[]} corrected list of wagons
  */
 export function correctListOfWagons(ids, missingWagons) {
-  throw new Error('Remove this line and implement the function');
+  //Adding the missingWagons into ids but with a still in front
+  const [a, ...everythingElse] = ids;
+  const [...missing] = missingWagons;
+  return [a, ...missing, ...everythingElse];
 }
 
 /**
@@ -43,7 +49,9 @@ export function correctListOfWagons(ids, missingWagons) {
  * @returns {Record<string, string>} extended route information
  */
 export function extendRouteInformation(information, additional) {
-  throw new Error('Remove this line and implement the function');
+  //Merging information and additional into one object
+  const fullInfo = { ...information, ...additional };
+  return fullInfo;
 }
 
 /**
@@ -53,5 +61,7 @@ export function extendRouteInformation(information, additional) {
  * @returns {[string, Record<string, string>]} array with arrival time and object without arrival time
  */
 export function separateTimeOfArrival(information) {
-  throw new Error('Remove this line and implement the function');
+  //Separating information to change its content's order
+  const { timeOfArrival, ...everythingElse } = information;
+  return [timeOfArrival, everythingElse];
 }
