@@ -14,5 +14,13 @@
  * @returns {string} the text to print on the badge
  */
 export function printBadge(id, name, department) {
-  throw new Error('Remove this line and implement the function');
+  //Declaring a string
+  let text = "";
+
+  //For every value in the badge, checking if present then adding it to the badge
+  if (id) text += `[${id}] `;
+  if (name) text += `${name} `;
+  if (department) text += `- ${department.toUpperCase()}`;
+  else text += `- OWNER`; //If the departement is null, add OWNER to the badge
+  return text;
 }
