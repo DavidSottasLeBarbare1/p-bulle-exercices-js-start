@@ -4,5 +4,12 @@
 //
 
 export const cost = (books) => {
-  throw new Error('Remove this line and implement the function');
+  return;
+};
+
+const firstMethod = (books) => {
+  let cost = 0;
+  let book2 = books.wher;
+
+  for (let i = 0; i < books.length; i++) {}
 };
