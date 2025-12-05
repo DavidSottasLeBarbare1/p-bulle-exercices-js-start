@@ -4,12 +4,32 @@
 //
 
 export const cost = (books) => {
-  return;
-};
+  const discounts = {
+    1: 1.0,
+    2: 0.95,
+    3: 0.9,
+    4: 0.8,
+    5: 0.75,
+  };
 
-const firstMethod = (books) => {
-  let cost = 0;
-  let book2 = books.wher;
+  let books2 = [...books];
 
-  for (let i = 0; i < books.length; i++) {}
+  let groups = [];
+
+  while (books2.some((c) => c > 0)) {
+    let group = 0;
+    for (let i = 0; i < books2.length; i++) {
+      if (books2[i] > 0) {
+        books2[i]--;
+        group++;
+      }
+    }
+    groups.push(group);
+  }
+
+  return groups.reduce(
+    (accumulator, currentValue) =>
+      accumulator + currentValue * 8 * discounts[currentValue],
+    0
+  );
 };
