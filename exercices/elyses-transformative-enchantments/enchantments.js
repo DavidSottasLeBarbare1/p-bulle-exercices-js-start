@@ -19,12 +19,26 @@ export function seeingDouble(deck) {
  * @returns {number[]} deck with triplicate 3s
  */
 export function threeOfEachThree(deck) {
-  let currentIndex = 0;
-  return deck.reduce((accumulator, currentValue) => {
-    if (currentValue === 3) {
+  //Pushing the right data into the newTab accumulator
+  return deck.reduce((newTab, currentValue) => {
+    if (currentValue == 3) {
+      newTab.push(3, 3, 3);
+    } else {
+      newTab.push(currentValue);
     }
-    return accumulator;
-  }, currentIndex);
+    return newTab;
+  }, []);
+
+  /* Easier way of doing it :
+  for (let i = 0; i < deck.length; i++) {
+    if (deck[i] == 3) {
+      newTab.push(3, 3, 3);s
+    } else {
+      newTab.push(deck[i]);
+    }
+  }
+  return newTab;
+  */
 }
 
 /**
@@ -36,7 +50,11 @@ export function threeOfEachThree(deck) {
  * @returns {number[]} deck with only two middle cards
  */
 export function middleTwo(deck) {
-  throw new Error("Implement the middleTwo function");
+  //Returning the two middle cards of the deck
+  return deck.slice(
+    Math.floor(deck.length / 2) - 1,
+    Math.floor(deck.length / 2) + 1
+  );
 }
 
 /**
@@ -48,7 +66,15 @@ export function middleTwo(deck) {
  */
 
 export function sandwichTrick(deck) {
-  throw new Error("Implement the sandwichTrick function");
+  //Assigning a variable to the middle of the deck in order for it to stay the same even if we change deck
+  let middleOfDeck = deck.length / 2;
+
+  //Putting the last card into the first middle place
+  deck.splice(middleOfDeck, 0, deck.pop());
+
+  //Putting the first card into the second middle place
+  deck.splice(middleOfDeck, 0, deck.shift());
+  return deck;
 }
 
 /**
@@ -59,7 +85,8 @@ export function sandwichTrick(deck) {
  * @returns {number[]} deck with only 2s
  */
 export function twoIsSpecial(deck) {
-  throw new Error("Implement the twoIsSpecial function");
+  //Filtering the deck in order to only have cards that equals 2
+  return deck.filter((card) => card == 2);
 }
 
 /**
@@ -70,7 +97,10 @@ export function twoIsSpecial(deck) {
  * @returns {number[]} ordered deck
  */
 export function perfectlyOrdered(deck) {
-  throw new Error("Implement the perfectlyOrdered function");
+  //Sorting the deck even when it has 2 or more character
+  return deck.sort((a, b) => {
+    return a - b;
+  });
 }
 
 /**
@@ -81,5 +111,6 @@ export function perfectlyOrdered(deck) {
  * @returns {number[]} reordered deck
  */
 export function reorder(deck) {
-  throw new Error("Implement the reorder function");
+  //Reversing the deck
+  return deck.reverse();
 }
