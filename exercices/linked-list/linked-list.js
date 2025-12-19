@@ -4,22 +4,31 @@
 //
 
 export class LinkedList {
-  List = [1];
-  push(pushed) {
-    this.List.push(pushed);
-    return List;
+  List = [];
+  push() {
+    return this.List.push(...arguments);
   }
 
-  pop(poped) {
-    this.List.pop(poped);
-    return List;
+  pop() {
+    return this.List.pop(...arguments);
   }
 
-  shift() {}
+  shift() {
+    return this.List.shift(...arguments);
+  }
 
-  unshift() {}
+  unshift() {
+    return this.List.unshift(...arguments);
+  }
 
-  delete() {}
+  delete() {
+    if (this.List.includes(...arguments)) {
+      this.List.splice(this.List.indexOf(...arguments), 1);
+    }
+    return this.List;
+  }
 
-  count() {}
+  count() {
+    return this.List.length;
+  }
 }
