@@ -4,27 +4,22 @@
 //
 
 export class LinkedList {
-  push() {
-    throw new Error('Remove this line and implement the function');
+  List = [1];
+  push(pushed) {
+    this.List.push(pushed);
+    return List;
   }
 
-  pop() {
-    throw new Error('Remove this line and implement the function');
+  pop(poped) {
+    this.List.pop(poped);
+    return List;
   }
 
-  shift() {
-    throw new Error('Remove this line and implement the function');
-  }
+  shift() {}
 
-  unshift() {
-    throw new Error('Remove this line and implement the function');
-  }
+  unshift() {}
 
-  delete() {
-    throw new Error('Remove this line and implement the function');
-  }
+  delete() {}
 
-  count() {
-    throw new Error('Remove this line and implement the function');
-  }
+  count() {}
 }
