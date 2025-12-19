@@ -7,7 +7,9 @@
  * @returns {Record<string, number>} new score board
  */
 export function createScoreBoard() {
-  throw new Error('Remove this line and implement the function');
+  //Creating a new scoreboard with the default score
+  const scoreBoard = { "The Best Ever": 1000000 };
+  return scoreBoard;
 }
 
 /**
@@ -19,7 +21,9 @@ export function createScoreBoard() {
  * @returns {Record<string, number>} updated score board
  */
 export function addPlayer(scoreBoard, player, score) {
-  throw new Error('Remove this line and implement the function');
+  //Add the player to the scoreBoard
+  scoreBoard[player] = score;
+  return scoreBoard;
 }
 
 /**
@@ -30,7 +34,9 @@ export function addPlayer(scoreBoard, player, score) {
  * @returns {Record<string, number>} updated score board
  */
 export function removePlayer(scoreBoard, player) {
-  throw new Error('Remove this line and implement the function');
+  //Remove the player from the scoreBoard
+  delete scoreBoard[player];
+  return scoreBoard;
 }
 
 /**
@@ -42,7 +48,9 @@ export function removePlayer(scoreBoard, player) {
  * @returns {Record<string, number>} updated score board
  */
 export function updateScore(scoreBoard, player, points) {
-  throw new Error('Remove this line and implement the function');
+  //Add points to the player
+  scoreBoard[player] += points;
+  return scoreBoard;
 }
 
 /**
@@ -52,5 +60,9 @@ export function updateScore(scoreBoard, player, points) {
  * @returns {Record<string, number>} updated score board
  */
 export function applyMondayBonus(scoreBoard) {
-  throw new Error('Remove this line and implement the function');
+  //Add 100 points to every player
+  for (let player in scoreBoard) {
+    scoreBoard[player] += 100;
+  }
+  return scoreBoard;
 }
