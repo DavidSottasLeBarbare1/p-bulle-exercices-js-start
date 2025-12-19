@@ -11,7 +11,8 @@
  * @returns {string[]} new playlist with unique entries
  */
 export function removeDuplicates(playlist) {
-  throw new Error('Remove this line and implement the function');
+  //Transforming an array into a set then back to an array to delete duplicates
+  return [...new Set(playlist)];
 }
 
 /**
@@ -22,7 +23,8 @@ export function removeDuplicates(playlist) {
  * @returns {boolean} whether the track is in the playlist
  */
 export function hasTrack(playlist, track) {
-  throw new Error('Remove this line and implement the function');
+  //Return true if the new set has track inside
+  return new Set(playlist).has(track);
 }
 
 /**
@@ -33,7 +35,13 @@ export function hasTrack(playlist, track) {
  * @returns {string[]} new playlist
  */
 export function addTrack(playlist, track) {
-  throw new Error('Remove this line and implement the function');
+  //Declaring a new set
+  let set = new Set(playlist);
+
+  //Adding track to set
+  set.add(track);
+
+  return [...set];
 }
 
 /**
@@ -44,7 +52,13 @@ export function addTrack(playlist, track) {
  * @returns {string[]} new playlist
  */
 export function deleteTrack(playlist, track) {
-  throw new Error('Remove this line and implement the function');
+  //Declaring a new set
+  let set = new Set(playlist);
+
+  //Removing track from set
+  set.delete(track);
+
+  return [...set];
 }
 
 /**
@@ -54,5 +68,14 @@ export function deleteTrack(playlist, track) {
  * @returns {string[]} list of artists
  */
 export function listArtists(playlist) {
-  throw new Error('Remove this line and implement the function');
+  //Declaring 2 new sets
+  let everythingSet = new Set(playlist);
+  let artistSet = new Set();
+
+  //Iterating over every element in the first set then splitting them in the middle to put only to artist in set2
+  for (const item of everythingSet) {
+    const splitArray = item.split(" - ");
+    artistSet.add(splitArray[1]);
+  }
+  return [...artistSet];
 }
