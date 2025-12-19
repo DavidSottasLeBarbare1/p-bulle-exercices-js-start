@@ -28,17 +28,6 @@ export function threeOfEachThree(deck) {
     }
     return newTab;
   }, []);
-
-  /* Easier way of doing it :
-  for (let i = 0; i < deck.length; i++) {
-    if (deck[i] == 3) {
-      newTab.push(3, 3, 3);s
-    } else {
-      newTab.push(deck[i]);
-    }
-  }
-  return newTab;
-  */
 }
 
 /**
